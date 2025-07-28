@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Distribuidora San Gerardo</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        <main class="container text-center mt-4">
+            <!-- Contenido de la página de inicio -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-8">
+                    <h1><span style="color: #ffc107;">Distribuidora <strong>San Gerardo</strong></span></h1>
+                    <p class="lead">Tenemos más de 25 años brindando los productos de la mejor calidad a sus hogares.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="/fav/icon-Distribuiora.png" alt=""/>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="bg-danger text-white p-3 rounded">
+                        <img src="/img/huevos.png" alt="" class="img-fluid mb-2"/>
+                        <h5>Huevos</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bg-danger text-white p-3 rounded">
+                        <img src="/img/Carnes.png" alt="" class="img-fluid mb-2"/>
+                        <h5>Res, Pollo y Cerdo</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bg-danger text-white p-3 rounded">
+                        <img src="/img/lacteos.png" alt="" class="img-fluid mb-2"/>
+                        <h5>Lácteos</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bg-danger text-white p-3 rounded">
+                        <img src="/img/Frutas y verduras.png" alt="Verduras y Frutas" class="img-fluid mb-2"/>
+                        <h5>Verduras y Frutas</h5>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>

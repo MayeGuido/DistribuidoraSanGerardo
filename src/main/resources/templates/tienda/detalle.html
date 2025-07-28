@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Detalle Producto</title>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        <main class="container mt-4">
+            <h2 th:text="${producto.descripcion}">Nombre producto</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" th:src="@{${producto.rutaImagen}}" alt="Imagen" />
+                </div>
+                <div class="col-md-8">
+                    <p><strong>Detalle:</strong> <span th:text="${producto.detalle}"></span></p>
+                    <p><strong>Precio:</strong> ₡<span th:text="${producto.precio}"></span></p>
+                    <p><strong>Existencias:</strong> <span th:text="${producto.existencias}"></span></p>
+                    <a th:href="@{/producto/listado}" class="btn btn-secondary">Volver</a>
+                </div>
+            </div>
+        </main>
+        <section th:fragment="modalDetalle"> <div class="modal fade" id="detalleProductoModal" tabindex="-1" aria-hidden="true"> 
+                <div class="modal-dialog modal-lg modal-dialog-centered"> 
+                    <div class="modal-content"> 
+                        <div class="modal-header bg-primary text-white"> 
+                            <h5 class="modal-title">Detalle del Producto</h5> 
+                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+
+                            </button> 
+                        </div> 
+                        <div class="modal-body" id="contenidoModalDetalle">
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>

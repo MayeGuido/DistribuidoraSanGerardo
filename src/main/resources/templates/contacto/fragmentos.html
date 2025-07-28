@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<section th:fragment="contacto">
+    <div class="container mt-5">
+        <h2 class="text-center text-warning fw-bold">Contáctenos</h2>
+        <p class="text-center">Por favor déjanos tu consulta o experiencia con nuestro negocio, así podremos mejorar su experiencia. 
+        Búscanos en Waze o Google Maps, encuéntranos como Distribuidora San Gerardo.</p>
+
+        <div class="row mt-4">
+            <!-- Información de contacto -->
+            <div class="col-md-4">
+                <div class="p-3 shadow bg-danger text-white mb-3">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <p class="mb-0">100m Norte, del Palacio municipal. Tres Ríos, Cartago</p>
+                </div>
+                <div class="p-3 shadow bg-danger text-white mb-3">
+                    <i class="bi bi-envelope-fill"></i>
+                    <p class="mb-0">isabel22f1955@gmail.com</p>
+                </div>
+                <div class="p-3 shadow bg-warning mb-3">
+                    <i class="bi bi-telephone-fill"></i>
+                    <p class="mb-0 text-dark">2279-6828 / 8811-6049</p>
+                </div>
+                <div class="p-3 shadow bg-warning">
+                    <i class="bi bi-calendar-event-fill"></i>
+                    <p class="mb-0 text-dark">Lunes a Sábados<br>8am - 6:30pm</p>
+                </div>
+            </div>
+
+            <!-- Formulario de contacto -->
+            <div class="col-md-8">
+                <form th:action="@{/contacto/enviar}" method="post">
+                    <input type="text" name="nombre" class="form-control mb-3" placeholder="Nombre / Apellidos" required>
+                    <input type="email" name="email" class="form-control mb-3" placeholder="Correo electrónico" required>
+                    <textarea name="mensaje" rows="5" class="form-control mb-3" placeholder="Mensaje/Comentario" required></textarea>
+                    <button type="submit" class="btn btn-danger">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <p>También nos encuentras en Uber Eats y Didi Food.</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/springsecurity6">
+
+    <head th:fragment="head">
+        <title>Distribuidora San Gerardo</title>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/fav/icon-Distribuiora.png"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/js/rutinas.js}"></script>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    </head>
+
+    <body>
+        <header th:fragment="header" class="header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+                <div class="container justify-content-center">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <!-- Izquierda de Inicio -->
+                            <li class="nav-item px-3">
+                                <a class="nav-link" th:href="@{/nosotros}">Nosotros</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link" th:href="@{/recetas/listado}">Recetas</a>
+                            </li>
+
+                            <!-- Centro -->
+                            <li class="nav-item px-3">
+                                <a class="nav-link fw-bold border-bottom border-warning border-3" th:href="@{/}">Inicio</a>
+                            </li>
+
+                            <!-- Derecha de Inicio -->
+                            <li class="nav-item px-3">
+                                <a class="nav-link" th:href="@{/tienda/listado}">Tienda</a>
+                            </li>
+                            <li class="nav-item px-3">
+                                <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <section id="main-header" class="py-2" style="background-color: firebrick; color: white;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1><i class="fas fa-store"></i> Bienvenidos a Distribuidora San Gerardo</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <form th:action="@{/producto/buscar}" method="get" class="d-flex p-3" role="search">
+                <input class="form-control me-2" type="search" name="nombre" placeholder="Buscar producto..." />
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </header>
+
+        <footer th:fragment="footer" class="p-2 mt-5" style="background-color: darkred; color: white;">
+            <p class="lead text-center">&copy; Distribuidora San Gerardo - Todos los derechos reservados 2025</p>
+        </footer>
+
+        <section th:fragment="mostrarToast">
+            <!-- Toasts para éxito o error -->
+        </section>
+
+    </body>
+</html>
